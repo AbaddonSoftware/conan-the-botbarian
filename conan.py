@@ -25,6 +25,6 @@ class Conan(commands.Bot):
     async def setup_hook(self):
         @self.command()
         async def ping(ctx):
-            await ctx.send(f"{self.user.name} hits {ctx.author.mention} with an Axe!")
+            await ctx.send(f"{self.user.name} hits {ctx.author.mention} with an Axe! and it only took {self.latency * 1000:.0f} ms to hit you!")
 
 Conan().run(BOT_TOKEN)
