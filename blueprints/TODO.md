@@ -15,4 +15,7 @@
 
 ### Move Extensions/Cogs to folders
 
+  -defaultExpandeed: false
+  
+
 

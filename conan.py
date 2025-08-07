@@ -1,10 +1,25 @@
 import os
+import logging
+from pathlib import Path
 from dotenv import load_dotenv
 import discord
 from discord.ext import commands
 
-load_dotenv()
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+# Setup logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger("conan")
+
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+# is_docker = True
+is_docker = os.environ.get("is_docker")
+if not is_docker:
+    load_dotenv()
+    BOT_TOKEN = os.environ.get("BOT_TOKEN")
+
+    
+
+
+
 
 intents = discord.Intents.default()
 intents.members = True
