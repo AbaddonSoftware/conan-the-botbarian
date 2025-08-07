@@ -10,21 +10,21 @@ intents = discord.Intents.default()
 intents.members = True
 intents.message_content = True
 
+extensions = ["extensions.utility.ping"]
 
 class Conan(commands.Bot):
-    """A simple Discord bot structure."""
+    """A barebones discord bot structure."""
 
     def __init__(self):
         super().__init__(
-            command_prefix="!", description="barebones bot structure", intents=intents
+            command_prefix="!", description="A barebones discord bot structure", intents=intents
         )
 
     async def on_ready(self):
         print(f"{self.user.name} is online!")
 
     async def setup_hook(self):
-        @self.command()
-        async def ping(ctx):
-            await ctx.send(f"{self.user.name} hits {ctx.author.mention} with an Axe! and it only took {self.latency * 1000:.0f} ms to hit you!")
+        for extension in extensions:
+            await self.load_extension(extension)
 
 Conan().run(BOT_TOKEN)
