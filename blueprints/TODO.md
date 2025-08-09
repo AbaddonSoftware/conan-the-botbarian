@@ -1,6 +1,6 @@
 # 🛠️ Conan The Botbarian Development Kanban
 
-## 🟡 Planned Improvements
+## 🟡 Planned Improvements 
 
 ## 🔴 In Progress
 
@@ -16,6 +16,6 @@
 ### Move Extensions/Cogs to folders
 
   -defaultExpandeed: false
-  
+
 
 

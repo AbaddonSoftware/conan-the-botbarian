@@ -9,12 +9,11 @@ from discord.ext import commands
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("conan")
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
-# is_docker = True
-is_docker = os.environ.get("is_docker")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+is_docker = os.getenv("is_docker")
 if not is_docker:
     load_dotenv()
-    BOT_TOKEN = os.environ.get("BOT_TOKEN")
+    BOT_TOKEN = os.getenv("BOT_TOKEN")
 
     
 
