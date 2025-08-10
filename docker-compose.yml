@@ -5,6 +5,4 @@ services:
     restart: unless-stopped
     env_file:
       - /home/abaddon/Projects/SecureEnvironments/Python/conan-the-botbarian/.env
-    environment:
-      - is_docker=True
 
